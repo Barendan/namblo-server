@@ -1,26 +1,17 @@
-const Posts = [{
-    _id: "420",
-    title: 'First Post',
-    body: 'I sure do love writing',
-    author: 'Daniel Barenboim'
-}];
+import { getMouseEventOptions } from "@testing-library/user-event/dist/utils"
 
 export const resolvers = {
     Query: {
-        getPosts: (_, _args, _context) => {
-            return Posts
+        getPosts: (_, _args, { dataSources: { posts } }) => {
+            return posts.getPosts()
         },
-        getPost: (_, {id}, context) => {
-            return Posts.find(({ _id }) => _id === id)
+        getPost: (_, {id}, { dataSources: { posts } }) => {
+            return posts.getPost(id)
         }
     },
     Mutation: {
-        createPost: (_root, _args, _context, _info) => {
-            const randomId = Math.random().toString().split('.')[1];
-            const newPost = { ...args, _id: randomId };
-            Posts.push(newPost);
-            return newPost
+        createPost: (_root, _args, { dataSources: { posts } }) => {
+            return posts.createPost(args)
         }
     }
-
 }
