@@ -9,10 +9,10 @@ const Posts = [{
 
 export const resolvers = {
     Query: {
-        getPosts: (_, _args, _context, _) => {
+        getPosts: (_, _args, _context) => {
             return posts
         },
-        getPost: (_, {id}, context, _) => {
+        getPost: (_, {id}, context) => {
             return posts.find(({ _id }) => _id === id)
         }
     },
@@ -24,5 +24,5 @@ export const resolvers = {
             return newPost
         }
     }
-    
+
 }
