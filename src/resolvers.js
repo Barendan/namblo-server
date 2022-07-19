@@ -1,5 +1,3 @@
-import { moveEmitHelpers } from "typescript";
-
 const Posts = [{
     _id: "420",
     title: 'First Post',
@@ -10,10 +8,10 @@ const Posts = [{
 export const resolvers = {
     Query: {
         getPosts: (_, _args, _context) => {
-            return posts
+            return Posts
         },
         getPost: (_, {id}, context) => {
-            return posts.find(({ _id }) => _id === id)
+            return Posts.find(({ _id }) => _id === id)
         }
     },
     Mutation: {
