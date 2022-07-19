@@ -1,8 +1,21 @@
+import 'dotenv/config';
+import mongoose from 'mongoose';
 import { ApolloServer } from 'apollo-server';
+
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 
-// const MONGODB_URI = mongodb+srv://firstman:<password>@cluster0.mbphrki.mongodb.net/?retryWrites=true&w=majority
+
+
+const uri = process.env.MONGODB_URI;
+const main = async () => {
+  await mongoose.connect(uri, { useNewUrlParser: true })
+}
+
+main()
+  .then(console.log('🎉 connected to database successfully'))
+  .catch(error => console.error(error));
+
 
 const server = new ApolloServer({typeDefs, resolvers})
 
