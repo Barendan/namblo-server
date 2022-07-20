@@ -1,18 +1,32 @@
-// import './App.css';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  // useQuery,
+  // gql
+} from "@apollo/client";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          Learn React
-          
-      </header>
-    </div>
-  );
-}
 
-export default App;
+const client = new ApolloClient({
+  uri: "http://localhost:4000",
+  cache: new InMemoryCache()
+});
+
+
+
+
+
+
+
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <div>
+        Hi there!
+      </div>
+    </React.StrictMode>
+  </ApolloProvider>,
+  document.getElementById('root')
+)

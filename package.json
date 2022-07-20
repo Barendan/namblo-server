@@ -7,6 +7,7 @@
     "apollo-datasource-mongodb": "^0.5.4",
     "apollo-server": "^3.10.0",
     "dotenv": "^16.0.1",
+    "fetch": "^1.1.0",
     "graphql": "^16.5.0",
     "mongoose": "^6.4.5",
     "react": "^18.2.0",
@@ -18,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "babel-node server/index.js"
+    "server": "babel-node server/index.js",
+    "client": "babel-node client/app.js"
   },
   "eslintConfig": {
     "extends": [

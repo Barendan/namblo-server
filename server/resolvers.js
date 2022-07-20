@@ -1,4 +1,3 @@
-import { getMouseEventOptions } from "@testing-library/user-event/dist/utils"
 
 export const resolvers = {
     Query: {
