@@ -10,7 +10,13 @@ export const resolvers = {
     },
     Mutation: {
         createPost: (_root, _args, { dataSources: { posts } }) => {
-            return posts.createPost(args)
+            return posts.createPost(_args)
+        },
+        deletePost: (_root, {id}, { dataSources: { posts } }) => {
+            return posts.deletePost(id)
+        },
+        updatePost: (_root, _args, { dataSources: { posts } }) => {
+            return posts.updatePost(_args)
         }
     }
 }
