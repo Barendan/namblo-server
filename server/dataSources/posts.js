@@ -17,8 +17,7 @@ export default class Posts extends MongoDataSource {
         return await this.model.findByIdAndDelete(id);
     }
 
-    async updatePost(payload) {
-        console.log('here is payload', payload.id, payload.body )
-        return await this.model.findByIdAndUpdate(payload.id, { title: payload.title, body: payload.body, author: payload.author })
+    async updatePost({ id, title, body, author }) {
+        return await this.model.findByIdAndUpdate(id, { title, body, author }, { new: true, overwrite: false })
     }
 }
