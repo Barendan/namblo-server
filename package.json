@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.6.9",
     "apollo-datasource-mongodb": "^0.5.4",
     "apollo-server": "^3.10.0",
-    "cross-fetch": "^3.1.5",
     "dotenv": "^16.0.1",
     "graphql": "^16.5.0",
     "mongoose": "^6.4.5",
@@ -15,11 +13,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "babel-node server/index.js"
+    "start": "babel-node server/index.js"
   },
   "eslintConfig": {
     "extends": [

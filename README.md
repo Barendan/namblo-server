@@ -1,0 +1,1 @@
+Apollo Server, GRAPHQL, MongoDB, Node, Mongoose
