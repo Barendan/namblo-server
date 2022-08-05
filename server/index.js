@@ -26,7 +26,7 @@ const server = new ApolloServer({
   resolvers, 
   dataSources,
   cors: {
-    origins: '*'
+    origins: ['http://localhost:3000']
   }
 })
 
