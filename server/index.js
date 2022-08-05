@@ -24,7 +24,10 @@ const dataSources = () => ({
 const server = new ApolloServer({
   typeDefs, 
   resolvers, 
-  dataSources
+  dataSources,
+  cors: {
+    origins: ['http://localhost:3000']
+  }
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
