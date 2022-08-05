@@ -24,14 +24,7 @@ const dataSources = () => ({
 const server = new ApolloServer({
   typeDefs, 
   resolvers, 
-  dataSources,
-  cors: {
-    origins: []
-  },
-  introspection: true,
-  playground: {
-    endpoint: "/graphql",
-  },
+  dataSources
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
