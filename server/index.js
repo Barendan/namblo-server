@@ -26,8 +26,12 @@ const server = new ApolloServer({
   resolvers, 
   dataSources,
   cors: {
-    origins: ['http://localhost:3000']
-  }
+    origins: []
+  },
+  introspection: true,
+  playground: {
+    endpoint: "/graphql",
+  },
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
