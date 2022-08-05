@@ -1,5 +1,5 @@
 {
-  "name": "namblog",
+  "name": "namblo-server",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,5 +44,9 @@
     "@babel/core": "^7.18.9",
     "@babel/node": "^7.18.9",
     "@babel/preset-env": "^7.18.9"
+  },
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=10.0.0"
   }
 }
