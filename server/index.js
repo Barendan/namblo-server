@@ -26,7 +26,7 @@ const server = new ApolloServer({
   resolvers, 
   dataSources,
   cors: {
-    allow_any_origin: true
+    origins: []
   }
 })
 
