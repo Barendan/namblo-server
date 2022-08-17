@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import { ApolloServer } from 'apollo-server';
+import axios from 'axios';
 
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
