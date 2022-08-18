@@ -29,19 +29,19 @@ const server = new ApolloServer({
   typeDefs, 
   resolvers, 
   dataSources,
-  context: async ({ req }) => {
-    const token = req.headers.authorization || '';
-    const userId = token.split(' ')[1]; // get username after 'Bearer '
-    if (userId) {
-      const { data } = await axios
-        .get(`http://localhost:4011/login/${userId}`)
-        .catch((error) => {
-          throw new AuthenticationError(error.message);
-        });
+  // context: async ({ req }) => {
+  //   const token = req.headers.authorization || '';
+  //   const userId = token.split(' ')[1]; // get username after 'Bearer '
+  //   if (userId) {
+  //     const { data } = await axios
+  //       .get(`http://localhost:4011/login/${userId}`)
+  //       .catch((error) => {
+  //         throw new AuthenticationError(error.message);
+  //       });
 
-      return { userId: data.id, userRole: data.role };
-    }
-  }
+  //     return { userId: data.id, userRole: data.role };
+  //   }
+  // }
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
