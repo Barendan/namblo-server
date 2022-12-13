@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/server": "^4.2.2",
     "@babel/node": "^7.18.10",
     "apollo-datasource-mongodb": "^0.5.4",
     "apollo-server": "^3.10.0",

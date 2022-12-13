@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
-import { ApolloServer } from 'apollo-server';
+// import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from '@apollo/server';
+// import { startStandaloneServer } from '@apollo/server/standalone';
 
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
@@ -30,6 +32,16 @@ const server = new ApolloServer({
   dataSources
 })
 
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+const newPromise = new Promise (function (resolve, reject) {
+  resolve( startStandaloneServer(server, {
+    listen: { port: 4000 },
+  }))
 });
+
+newPromise.then(function(result) { console.log(`🚀  Server ready at: ${result.url}`)} )
+
+// console.log(`🚀  Server ready at: ${url}`);
+
+// server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+//   console.log(`🚀 Server ready at ${url}`);
+// });
